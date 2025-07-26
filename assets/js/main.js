@@ -201,22 +201,30 @@ class CLGallery {
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
         
-        // Try to load the actual image, fallback to placeholder
-        const img = new Image();
-        img.onload = () => {
-            modalImage.src = imageSrc;
-        };
-        img.onerror = () => {
-            modalImage.src = this.createPlaceholderImage();
-        };
-        img.src = imageSrc;
+        modalImage.src = '';
+        modalImage.style.display = 'none';
         
         modalTitle.textContent = title;
         modalDescription.textContent = description;
-        modal.style.display = 'block';
         
-        // Add animation class
+        modal.style.display = 'block';
         modal.classList.add('modal-open');
+        
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.classList.add('loading');
+        
+        const img = new Image();
+        img.onload = () => {
+            modalImage.src = imageSrc;
+            modalImage.style.display = 'block';
+            modalContent.classList.remove('loading');
+        };
+        img.onerror = () => {
+            modalImage.src = this.createPlaceholderImage();
+            modalImage.style.display = 'block';
+            modalContent.classList.remove('loading');
+        };
+        img.src = imageSrc;
     }
 
     /**
@@ -224,8 +232,12 @@ class CLGallery {
      */
     closeModal() {
         const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        
         modal.style.display = 'none';
         modal.classList.remove('modal-open');
+        
+        modalImage.src = '';
     }
 
     /**
