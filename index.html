@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targeted Attack Framework for Continual Learning</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title"></h1>
+            <p class="subtitle"></p>
+            <div class="links">
+                <a href="#" class="btn btn-primary" id="paper-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                    Paper
+                </a>
+                <a href="#" class="btn btn-secondary" id="code-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    Code
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div id="benchmarks-container">
+                <!-- Benchmarks will be dynamically inserted here -->
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 xxx: xxxxxxxx. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Image Viewing -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>window.embeddedConfig = {"project": {"title": "xxx: This is title", "authors": ["This is subtitle"], "paper_url": "#", "code_url": "#"}, "benchmarks": [{"id": "cifar100_targeted", "name": "Targeted Transferability Attack", "dataset": "CIFAR-100", "type": "targeted", "cil_methods": [{"name": "Replay", "results_path": "cifar100/replay", "stat": [{"name": "SOTA", "value": 0.312}, {"name": "OUR", "value": 0.376}]}, {"name": "MEMO", "results_path": "cifar100/memo", "stat": [{"name": "SOTA", "value": "0.380"}, {"name": "OUR", "value": 0.527}]}, {"name": "DER", "results_path": "cifar100/der", "stat": [{"name": "SOTA", "value": 0.402}, {"name": "OUR", "value": 0.631}]}, {"name": "Foster", "results_path": "cifar100/foster", "stat": [{"name": "SOTA", "value": 0.485}, {"name": "OUR", "value": 0.495}]}, {"name": "WA", "results_path": "cifar100/wa", "stat": [{"name": "SOTA", "value": 0.562}, {"name": "OUR", "value": 0.635}]}, {"name": "BiC", "results_path": "cifar100/bic", "stat": [{"name": "SOTA", "value": 0.402}, {"name": "OUR", "value": 0.531}]}, {"name": "iCaRL", "results_path": "cifar100/icarl", "stat": [{"name": "SOTA", "value": 0.324}, {"name": "OUR", "value": 0.365}]}, {"name": "PodNet", "results_path": "cifar100/podnet", "stat": [{"name": "SOTA", "value": 0.422}, {"name": "OUR", "value": 0.853}]}, {"name": "Finetune", "results_path": "cifar100/finetune", "stat": [{"name": "SOTA", "value": 0.099}, {"name": "OUR", "value": 0.094}]}]}, {"id": "imagenet100_targeted", "name": "Targeted Transferability Attack", "dataset": "ImageNet-100", "type": "targeted", "cil_methods": [{"name": "iCaRL", "results_path": "imagenet100/icarl", "stat": [{"name": "SOTA", "value": 0.111}, {"name": "OUR", "value": 0.271}]}, {"name": "Foster", "results_path": "imagenet100/foster", "stat": [{"name": "SOTA", "value": 0.225}, {"name": "OUR", "value": 0.225}]}]}], "target_classes": 10, "class_names": ["Class 0", "Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"]};</script>
+</body>
+</html>
